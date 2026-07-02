@@ -1,75 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skye · Lewis · Harris — A Hebridean Travel Guide</title>
-  <meta name="description" content="Travel guide to the Isle of Skye, Lewis and Harris: food, sights, ferries and an interactive map." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hebrides Family Holiday Dashboard</title>
+  <meta name="description" content="Travel dashboard for the Isle of Skye, Lewis and Harris: food, sights, ferries and an interactive map." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18 L16 30' stroke='%23347a3d' stroke-width='3' fill='none'/%3E%3Cpath d='M10 20 Q16 24 22 20' stroke='%23347a3d' stroke-width='2.5' fill='none'/%3E%3Cellipse cx='16' cy='12' rx='7' ry='8' fill='%237A5FBE'/%3E%3Cpath d='M9 6 L12 10 M16 3 L16 8 M23 6 L20 10' stroke='%239B7EDE' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="masthead">
-      <div class="masthead-title">
-        <h1>Skye · Lewis · Harris</h1>
-        <p class="strapline">Na h‑Eileanan — a Hebridean travel guide</p>
-      </div>
-      <nav class="tabs" id="tabs">
-        <a href="#/map" data-view="map">Map</a>
-        <a href="#/food" data-view="food">Food</a>
-        <a href="#/sights" data-view="sights">Sights</a>
-        <a href="#/ferry" data-view="ferry">Ferry</a>
-      </nav>
-    </div>
-    <div class="tartan-stripe" aria-hidden="true"></div>
+  <div class="heather-hills"></div>
+  <header>
+    <h1>Hebrides Holiday</h1>
+    <p class="strapline">Skye · Lewis · Harris — food, sights &amp; ferries for the three of you (plus the dog)</p>
   </header>
+  <div class="tartan-stripe"></div>
+  <main class="main">
+    <div class="heather-petals"></div>
+    <div class="tabs">
+      <button class="tab-button active" data-target="map-panel" id="mapTab">Map view</button>
+      <button class="tab-button" data-target="food-panel" id="foodTab">Food</button>
+      <button class="tab-button" data-target="sights-panel" id="sightsTab">Sights</button>
+      <button class="tab-button" data-target="ferry-panel" id="ferryTab">Ferry</button>
+    </div>
 
-  <main>
-    <section id="view-map" class="view view-map" hidden>
-      <div id="map" aria-label="Map of Skye, Lewis and Harris"></div>
-    </section>
-
-    <section id="view-food" class="view page" hidden>
-      <div class="page-head">
-        <h2>Food &amp; Drink</h2>
-        <p class="lede" id="food-note"></p>
+    <div class="panel active" id="map-panel">
+      <div class="map-wrapper">
+        <div id="map"></div>
+        <aside class="map-notice" aria-expanded="true">
+          <div class="map-notice-header">
+            <strong>Interactive map guide</strong>
+            <button type="button" class="notice-toggle" id="noticeToggle" aria-expanded="true">Minimise</button>
+          </div>
+          <small>Hover pins to see details. Use the checkboxes to toggle categories and islands. Click “See on Map” on any card to jump to it.</small>
+          <div class="layer-controls">
+            <label><input type="checkbox" checked id="layer-food" /> Show Food &amp; Drink</label>
+            <label><input type="checkbox" checked id="layer-sights" /> Show Sights</label>
+            <label><input type="checkbox" checked id="layer-ferries" /> Show Ferries</label>
+            <div class="layer-sep"></div>
+            <label><input type="checkbox" checked id="layer-skye" /> Isle of Skye</label>
+            <label><input type="checkbox" checked id="layer-lewis" /> Isle of Lewis</label>
+            <label><input type="checkbox" checked id="layer-harris" /> Isle of Harris</label>
+          </div>
+        </aside>
       </div>
-      <div class="filters" id="food-filters"></div>
-      <div id="food-list"></div>
-    </section>
+    </div>
 
-    <section id="view-sights" class="view page" hidden>
-      <div class="page-head">
-        <h2>Sights &amp; Things to Do</h2>
-        <p class="lede" id="sights-note"></p>
+    <div class="panel" id="food-panel">
+      <p class="page-note" id="food-note"></p>
+      <div class="list-controls">
+        <div class="list-filters-top">
+          <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+              <div class="filter-buttons" id="foodIslandFilters">
+                <button class="filter-button active" data-island="all" type="button">All islands</button>
+                <button class="filter-button" data-island="skye" type="button">Skye</button>
+                <button class="filter-button" data-island="lewis" type="button">Lewis</button>
+                <button class="filter-button" data-island="harris" type="button">Harris</button>
+              </div>
+              <button class="category-toggle" id="foodCategoryToggle" type="button" aria-expanded="true">Categories</button>
+            </div>
+            <div class="filter-buttons collapsible open" id="foodCategoryFilters">
+              <button class="filter-button active" data-category="all" type="button">All categories</button>
+            </div>
+          </div>
+        </div>
+        <input type="search" id="foodSearch" placeholder="Search food by name, town, cuisine…" />
       </div>
-      <div class="filters" id="sights-filters"></div>
-      <div id="sights-list"></div>
-    </section>
+      <div class="list-grid" id="foodList"></div>
+    </div>
 
-    <section id="view-ferry" class="view page" hidden>
-      <div class="page-head">
-        <h2>Ferries</h2>
-        <p class="lede">Sailings between Skye, Lewis &amp; Harris and the mainland, with costs for
+    <div class="panel" id="sights-panel">
+      <p class="page-note" id="sights-note"></p>
+      <div class="list-controls">
+        <div class="list-filters-top">
+          <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+              <div class="filter-buttons" id="sightsIslandFilters">
+                <button class="filter-button active" data-island="all" type="button">All islands</button>
+                <button class="filter-button" data-island="skye" type="button">Skye</button>
+                <button class="filter-button" data-island="lewis" type="button">Lewis</button>
+                <button class="filter-button" data-island="harris" type="button">Harris</button>
+              </div>
+              <button class="category-toggle" id="sightsCategoryToggle" type="button" aria-expanded="true">Categories</button>
+            </div>
+            <div class="filter-buttons collapsible open" id="sightsCategoryFilters">
+              <button class="filter-button active" data-category="all" type="button">All categories</button>
+            </div>
+          </div>
+        </div>
+        <input type="search" id="sightsSearch" placeholder="Search sights by name, area, type…" />
+      </div>
+      <div class="list-grid" id="sightsList"></div>
+    </div>
+
+    <div class="panel" id="ferry-panel">
+      <div class="ferry-card">
+        <div class="ferry-controls">
+          <label for="ferry-date">Travel date</label>
+          <input type="date" id="ferry-date" />
+          <span class="ferry-season" id="ferry-season"></span>
+        </div>
+        <p class="page-note" style="margin:0">Sailings between Skye, Lewis &amp; Harris and the mainland, with costs for
           <strong>2 adults, 1 child, a dog and a car</strong>.</p>
+        <div id="ferry-land-notes"></div>
       </div>
-      <div class="ferry-controls">
-        <label for="ferry-date">Travel date</label>
-        <input type="date" id="ferry-date" />
-        <span class="ferry-season" id="ferry-season"></span>
-      </div>
-      <div id="ferry-land-notes"></div>
       <div id="ferry-routes"></div>
       <p class="disclaimer" id="ferry-disclaimer"></p>
-    </section>
+    </div>
   </main>
 
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-btn active" data-target="map-panel">
+      <span class="icon">🗺️</span>
+      <span>Map</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="food-panel">
+      <span class="icon">🥧</span>
+      <span>Food</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="sights-panel">
+      <span class="icon">🏰</span>
+      <span>Sights</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="ferry-panel">
+      <span class="icon">⛴️</span>
+      <span>Ferry</span>
+    </button>
+  </nav>
+
   <footer class="site-footer">
-    <div class="tartan-stripe" aria-hidden="true"></div>
-    <p>Compiled from CalMac timetables, venue websites and visitor reviews (2026). Details change with the
-      island weather — always check ahead. <em>Slàinte mhath!</em></p>
+    <p>Compiled from CalMac timetables, venue websites and visitor reviews (2026). Details change with the island
+      weather — always check ahead. <em>Slàinte mhath!</em></p>
   </footer>
 
   <script src="assets/vendor/leaflet/leaflet.js"></script>

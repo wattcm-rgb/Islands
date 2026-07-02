@@ -17,21 +17,6 @@
     }
   };
 
-  // ---------- Falling heather petals --------------------------------------
-  function scatterPetals() {
-    var host = document.querySelector(".heather-petals");
-    if (!host) return;
-    for (var i = 0; i < 14; i++) {
-      var petal = document.createElement("div");
-      petal.className = "heather-petal";
-      petal.style.left = Math.random() * 100 + "vw";
-      petal.style.animationDuration = 9 + Math.random() * 10 + "s";
-      petal.style.animationDelay = -Math.random() * 18 + "s";
-      petal.style.transform = "scale(" + (0.6 + Math.random() * 0.7) + ")";
-      host.appendChild(petal);
-    }
-  }
-
   // ---------- Data loading --------------------------------------------------
   function loadJSON(path) {
     return fetch(path).then(function (r) {
@@ -56,8 +41,6 @@
     });
 
   function boot() {
-    scatterPetals();
-
     // Rank sights per island by their order in the dataset (top 20 each).
     var counters = {};
     App.data.sights.places.forEach(function (p) {

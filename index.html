@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skye · Lewis · Harris — A Hebridean Travel Guide</title>
+  <meta name="description" content="Travel guide to the Isle of Skye, Lewis and Harris: food, sights, ferries and an interactive map." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 18 L16 30' stroke='%23347a3d' stroke-width='3' fill='none'/%3E%3Cpath d='M10 20 Q16 24 22 20' stroke='%23347a3d' stroke-width='2.5' fill='none'/%3E%3Cellipse cx='16' cy='12' rx='7' ry='8' fill='%237A5FBE'/%3E%3Cpath d='M9 6 L12 10 M16 3 L16 8 M23 6 L20 10' stroke='%239B7EDE' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="masthead">
+      <div class="masthead-title">
+        <h1>Skye · Lewis · Harris</h1>
+        <p class="strapline">Na h‑Eileanan — a Hebridean travel guide</p>
+      </div>
+      <nav class="tabs" id="tabs">
+        <a href="#/map" data-view="map">Map</a>
+        <a href="#/food" data-view="food">Food</a>
+        <a href="#/sights" data-view="sights">Sights</a>
+        <a href="#/ferry" data-view="ferry">Ferry</a>
+      </nav>
+    </div>
+    <div class="tartan-stripe" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section id="view-map" class="view view-map" hidden>
+      <div id="map" aria-label="Map of Skye, Lewis and Harris"></div>
+    </section>
+
+    <section id="view-food" class="view page" hidden>
+      <div class="page-head">
+        <h2>Food &amp; Drink</h2>
+        <p class="lede" id="food-note"></p>
+      </div>
+      <div class="filters" id="food-filters"></div>
+      <div id="food-list"></div>
+    </section>
+
+    <section id="view-sights" class="view page" hidden>
+      <div class="page-head">
+        <h2>Sights &amp; Things to Do</h2>
+        <p class="lede" id="sights-note"></p>
+      </div>
+      <div class="filters" id="sights-filters"></div>
+      <div id="sights-list"></div>
+    </section>
+
+    <section id="view-ferry" class="view page" hidden>
+      <div class="page-head">
+        <h2>Ferries</h2>
+        <p class="lede">Sailings between Skye, Lewis &amp; Harris and the mainland, with costs for
+          <strong>2 adults, 1 child, a dog and a car</strong>.</p>
+      </div>
+      <div class="ferry-controls">
+        <label for="ferry-date">Travel date</label>
+        <input type="date" id="ferry-date" />
+        <span class="ferry-season" id="ferry-season"></span>
+      </div>
+      <div id="ferry-land-notes"></div>
+      <div id="ferry-routes"></div>
+      <p class="disclaimer" id="ferry-disclaimer"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="tartan-stripe" aria-hidden="true"></div>
+    <p>Compiled from CalMac timetables, venue websites and visitor reviews (2026). Details change with the
+      island weather — always check ahead. <em>Slàinte mhath!</em></p>
+  </footer>
+
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/ferry.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+{
+  "party": { "adults": 2, "children": 1, "dogs": 1, "cars": 1 },
+  "disclaimer": "Times and fares are indicative, compiled from CalMac's published 2026 timetables and fare sheets. Sailings vary by date (festivals, refits, weather) — always confirm at calmac.co.uk before travelling. Dogs travel free on all CalMac ferries.",
+  "landNotes": [
+    "Lewis and Harris are one landmass — there is no ferry between them. Drive the A859 between Tarbert and Stornoway (about 1 hour).",
+    "Skye is also connected to the mainland by the Skye Bridge at Kyle of Lochalsh — free, open 24/7."
+  ],
+  "routes": [
+    {
+      "id": "uig-tarbert",
+      "name": "Uig (Skye) ↔ Tarbert (Harris)",
+      "kind": "Inter-island — the direct link between Skye and Harris/Lewis",
+      "operator": "Caledonian MacBrayne",
+      "vessel": "MV Hebrides",
+      "durationMins": 100,
+      "ports": {
+        "a": { "name": "Uig, Skye", "lat": 57.5865, "lng": -6.3775 },
+        "b": { "name": "Tarbert, Harris", "lat": 57.8977, "lng": -6.8065 }
+      },
+      "fares": { "adult": 8.5, "child": 4.25, "car": 46.0, "dog": 0, "carApprox": true },
+      "notes": "Book the car well ahead in summer — this crossing sells out. An amended timetable runs 22–28 July 2026 for the Eilean Dorcha Festival.",
+      "seasons": [
+        {
+          "name": "Summer 2026 (27 Mar – 18 Oct)",
+          "from": "2026-03-27",
+          "to": "2026-10-18",
+          "sailings": {
+            "mon": [
+              { "from": "b", "dep": "07:20", "arr": "09:00" },
+              { "from": "a", "dep": "09:30", "arr": "11:10" },
+              { "from": "b", "dep": "16:20", "arr": "18:00" },
+              { "from": "a", "dep": "18:30", "arr": "20:10" }
+            ],
+            "tue": [
+              { "from": "a", "dep": "07:25", "arr": "09:05" },
+              { "from": "b", "dep": "09:25", "arr": "11:05" },
+              { "from": "a", "dep": "16:55", "arr": "18:35" },
+              { "from": "b", "dep": "18:45", "arr": "20:25" }
+            ],
+            "wed": [
+              { "from": "b", "dep": "07:20", "arr": "09:00" },
+              { "from": "a", "dep": "09:30", "arr": "11:10" },
+              { "from": "b", "dep": "16:20", "arr": "18:00" },
+              { "from": "a", "dep": "18:30", "arr": "20:10" }
+            ],
+            "thu": [
+              { "from": "a", "dep": "07:25", "arr": "09:05" },
+              { "from": "b", "dep": "09:25", "arr": "11:05" },
+              { "from": "a", "dep": "16:55", "arr": "18:35" },
+              { "from": "b", "dep": "18:45", "arr": "20:25" }
+            ],
+            "fri": [
+              { "from": "b", "dep": "07:20", "arr": "09:00" },
+              { "from": "a", "dep": "09:30", "arr": "11:10" },
+              { "from": "b", "dep": "16:20", "arr": "18:00" },
+              { "from": "a", "dep": "18:30", "arr": "20:10" }
+            ],
+            "sat": [
+              { "from": "a", "dep": "07:25", "arr": "09:05" },
+              { "from": "b", "dep": "09:25", "arr": "11:05" },
+              { "from": "a", "dep": "16:55", "arr": "18:35" },
+              { "from": "b", "dep": "18:45", "arr": "20:25" }
+            ],
+            "sun": [
+              { "from": "a", "dep": "09:30", "arr": "11:10" },
+              { "from": "b", "dep": "11:40", "arr": "13:20" }
+            ]
+          }
+        },
+        {
+          "name": "Winter 2026–27 (19 Oct – 25 Mar)",
+          "from": "2026-10-19",
+          "to": "2027-03-25",
+          "sailings": {
+            "mon": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "tue": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "wed": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "thu": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "fri": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "sat": [
+              { "from": "b", "dep": "07:30", "arr": "09:10" },
+              { "from": "a", "dep": "09:40", "arr": "11:20" }
+            ],
+            "sun": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "ullapool-stornoway",
+      "name": "Ullapool (mainland) ↔ Stornoway (Lewis)",
+      "kind": "Mainland link for Lewis",
+      "operator": "Caledonian MacBrayne",
+      "vessel": "MV Loch Seaforth",
+      "durationMins": 150,
+      "ports": {
+        "a": { "name": "Ullapool", "lat": 57.8953, "lng": -5.1615 },
+        "b": { "name": "Stornoway, Lewis", "lat": 58.2072, "lng": -6.3878 }
+      },
+      "fares": { "adult": 12.7, "child": 6.35, "car": 69.0, "dog": 0, "carApprox": true },
+      "notes": "The busiest Hebrides crossing — book vehicles early. An amended timetable runs Sun 19 July 2026 for the Hebridean Celtic Festival.",
+      "seasons": [
+        {
+          "name": "Summer 2026 (27 Mar – 18 Oct)",
+          "from": "2026-03-27",
+          "to": "2026-10-18",
+          "sailings": {
+            "mon": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "tue": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "wed": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "thu": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "fri": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "sat": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "sun": [
+              { "from": "b", "dep": "10:30", "arr": "13:00" },
+              { "from": "a", "dep": "14:30", "arr": "17:00" }
+            ]
+          }
+        },
+        {
+          "name": "Winter 2026–27 (19 Oct – 25 Mar)",
+          "from": "2026-10-19",
+          "to": "2027-03-25",
+          "sailings": {
+            "mon": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "tue": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "wed": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "thu": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "fri": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "sat": [
+              { "from": "b", "dep": "07:00", "arr": "09:30" },
+              { "from": "a", "dep": "10:30", "arr": "13:00" },
+              { "from": "b", "dep": "14:30", "arr": "17:00" },
+              { "from": "a", "dep": "18:00", "arr": "20:30" }
+            ],
+            "sun": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "mallaig-armadale",
+      "name": "Mallaig (mainland) ↔ Armadale (Skye)",
+      "kind": "Mainland link for Skye (scenic alternative to the bridge)",
+      "operator": "Caledonian MacBrayne",
+      "vessel": "MV Coruisk",
+      "durationMins": 45,
+      "ports": {
+        "a": { "name": "Mallaig", "lat": 57.0064, "lng": -5.828 },
+        "b": { "name": "Armadale, Skye", "lat": 57.0642, "lng": -5.8963 }
+      },
+      "fares": { "adult": 4.65, "child": 2.35, "car": 17.2, "dog": 0, "carApprox": true },
+      "notes": "Vehicle service runs in the summer season only (2 May – 18 Oct 2026); a limited service operates off-season. Pairs beautifully with the Jacobite steam train / Road to the Isles.",
+      "seasons": [
+        {
+          "name": "Summer 2026 (2 May – 18 Oct)",
+          "from": "2026-05-02",
+          "to": "2026-10-18",
+          "sailings": {
+            "mon": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" },
+              { "from": "a", "dep": "18:15", "arr": "19:00" },
+              { "from": "b", "dep": "19:10", "arr": "19:55" }
+            ],
+            "tue": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" },
+              { "from": "a", "dep": "18:15", "arr": "19:00" },
+              { "from": "b", "dep": "19:10", "arr": "19:55" }
+            ],
+            "wed": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" },
+              { "from": "a", "dep": "18:15", "arr": "19:00" },
+              { "from": "b", "dep": "19:10", "arr": "19:55" }
+            ],
+            "thu": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" },
+              { "from": "a", "dep": "18:15", "arr": "19:00" },
+              { "from": "b", "dep": "19:10", "arr": "19:55" }
+            ],
+            "fri": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" },
+              { "from": "a", "dep": "18:15", "arr": "19:00" },
+              { "from": "b", "dep": "19:10", "arr": "19:55" }
+            ],
+            "sat": [
+              { "from": "a", "dep": "09:00", "arr": "09:45" },
+              { "from": "b", "dep": "09:55", "arr": "10:40" },
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" }
+            ],
+            "sun": [
+              { "from": "a", "dep": "11:00", "arr": "11:45" },
+              { "from": "b", "dep": "12:00", "arr": "12:45" },
+              { "from": "a", "dep": "14:00", "arr": "14:45" },
+              { "from": "b", "dep": "15:00", "arr": "15:45" },
+              { "from": "a", "dep": "16:00", "arr": "16:45" },
+              { "from": "b", "dep": "17:00", "arr": "17:45" }
+            ]
+          }
+        },
+        {
+          "name": "Winter 2026–27 (19 Oct – 25 Mar) — limited service",
+          "from": "2026-10-19",
+          "to": "2027-03-25",
+          "sailings": {
+            "mon": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" },
+              { "from": "a", "dep": "14:25", "arr": "15:10" },
+              { "from": "b", "dep": "15:35", "arr": "16:20" }
+            ],
+            "tue": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" },
+              { "from": "a", "dep": "14:25", "arr": "15:10" },
+              { "from": "b", "dep": "15:35", "arr": "16:20" }
+            ],
+            "wed": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" },
+              { "from": "a", "dep": "14:25", "arr": "15:10" },
+              { "from": "b", "dep": "15:35", "arr": "16:20" }
+            ],
+            "thu": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" },
+              { "from": "a", "dep": "14:25", "arr": "15:10" },
+              { "from": "b", "dep": "15:35", "arr": "16:20" }
+            ],
+            "fri": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" },
+              { "from": "a", "dep": "14:25", "arr": "15:10" },
+              { "from": "b", "dep": "15:35", "arr": "16:20" }
+            ],
+            "sat": [
+              { "from": "a", "dep": "09:25", "arr": "10:10" },
+              { "from": "b", "dep": "10:35", "arr": "11:20" }
+            ],
+            "sun": []
+          }
+        }
+      ]
+    }
+  ]
+}

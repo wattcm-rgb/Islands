@@ -175,6 +175,14 @@
     return { towns: towns, byTown: byTown };
   }
 
+  var ISLAND_NAMES = { skye: "Isle of Skye", lewis: "Isle of Lewis", harris: "Isle of Harris" };
+
+  // Universal Google Maps link — opens the Maps app on phones, the website on desktop.
+  function gmapsUrl(p) {
+    var query = p.name + ", " + p.town + ", " + ISLAND_NAMES[p.island] + ", Scotland";
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
+  }
+
   function catPills(kind, cats) {
     var defs = App.data[kind].categories;
     return cats.map(function (c) {
@@ -197,6 +205,7 @@
       "</div>" +
       '<p class="restaurant-desc">' + esc(p.description) + "</p>" +
       '<div class="idea-actions"><button type="button" data-focus="' + p.id + '">See on Map</button>' +
+      '<a href="' + esc(gmapsUrl(p)) + '" target="_blank" rel="noreferrer">Google Maps</a>' +
       (p.website ? '<a href="' + esc(p.website) + '" target="_blank" rel="noreferrer">Website</a>' : "") +
       "</div></article>"
     );
@@ -215,7 +224,8 @@
       '<div class="restaurant-field">Cost: ' + esc(p.cost) + "</div>" +
       "</div>" +
       '<p class="restaurant-desc">' + esc(p.description) + "</p>" +
-      '<div class="idea-actions"><button type="button" data-focus="' + p.id + '">See on Map</button></div>' +
+      '<div class="idea-actions"><button type="button" data-focus="' + p.id + '">See on Map</button>' +
+      '<a href="' + esc(gmapsUrl(p)) + '" target="_blank" rel="noreferrer">Google Maps</a></div>' +
       "</article>"
     );
   }
@@ -269,6 +279,7 @@
       lines.push("<div><strong>" + f[0] + ":</strong> " + esc(f[1]) + "</div>");
     });
     lines.push('<div style="margin:10px 0;">' + esc(p.description) + "</div>");
+    lines.push('<div><a href="' + esc(gmapsUrl(p)) + '" target="_blank" rel="noreferrer">Google Maps</a></div>');
     if (p.website) lines.push('<div><a href="' + esc(p.website) + '" target="_blank" rel="noreferrer">Website</a></div>');
     lines.push("</div>");
     return lines.join("");
